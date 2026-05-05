@@ -6,7 +6,7 @@ public class SquareMover : MonoBehaviour
     Vector3 newPosition;
     public float speed = 0.03f;
     public float maxSpeed = 1f;
-    public float acceleration = 0.01f;
+    public float acceleration = 1.001f;
     float xMax = 8.4f;
     float xMin = -8.4f;
 
@@ -24,7 +24,7 @@ public class SquareMover : MonoBehaviour
         
         if(Mathf.Abs(speed) <= maxSpeed)
         {
-           speed += acceleration; // Increase speed by acceleration
+           speed *= acceleration; // Increase speed by acceleration
         }
 
         if (newPosition.x >= xMax || newPosition.x <= xMin)
