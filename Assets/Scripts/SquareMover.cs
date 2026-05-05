@@ -15,11 +15,6 @@ public class SquareMover : MonoBehaviour
     {
         newPosition = transform.position;
 
-
-
-
-
-
     }
 
     // Update is called once per frame
