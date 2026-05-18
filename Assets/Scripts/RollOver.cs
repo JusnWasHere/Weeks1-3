@@ -37,13 +37,5 @@ public class RollOver : MonoBehaviour
             progress = 0f;
             Debug.Log(progress);
         }
-
-        if (timerIsRunning)
-        {
-            progress += Time.deltaTime;
-            Debug.Log(progress);
-        }
-
-
     }
 }
