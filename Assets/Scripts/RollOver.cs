@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class RollOver : MonoBehaviour
 {
-    public Vector3 hidePosition;
+    public AnimationCurve curve;
     public Camera gameCamera;
     public float squareDistance;
     public bool timerIsRunning = false;
@@ -22,10 +22,13 @@ public class RollOver : MonoBehaviour
         worldMousePosition.z = 0f;
 
         float distance = Vector3.Distance(worldMousePosition, transform.position);
-        Debug.Log(distance);
+        //Debug.Log(distance);
 
         if (distance <= squareDistance)
         {
+            //Debug.Log("in box");
+            progress += Time.deltaTime;
+            transform.localScale = curve.Evaluate(progress) * Vector3.one;
             timerIsRunning = true;
         }
         else
